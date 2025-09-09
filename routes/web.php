@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\VentasController;
 
 
 Route::get('/', function(){
@@ -23,3 +24,8 @@ Route::get('/logout', function(){
     session()->forget('usuario_id');
     return redirect()->route('login.form');
 })->name('logout');
+
+Route::get('/compracafe',[VentasController::class, 'compracafe'])->name('compracafe');
+Route::get('/derivadoscafe',[VentasController::class, 'derivadoscafe'])->name('derivadoscafe');
+Route::get('/cultivacafe',[VentasController::class, 'cultivacafe'])->name('cultivacafe');
+Route::get('/herramientas',[VentasController::class, 'herramientas'])->name('herramientas');
