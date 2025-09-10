@@ -9,6 +9,10 @@ class Producto extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nombre', 'descripcion', 'valor', 'categoria_id', 'unidad_id', 'imagen', 'user_id'
+    ];
+
     public function categoria(){
         return $this->beLongsTo(Categoria::class);
     }

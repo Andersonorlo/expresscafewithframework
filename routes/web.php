@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\VentasController;
+use App\Http\Controllers\ProductoController;
 
 
 Route::get('/', function(){
@@ -29,3 +30,5 @@ Route::get('/compracafe',[VentasController::class, 'compracafe'])->name('comprac
 Route::get('/derivadoscafe',[VentasController::class, 'derivadoscafe'])->name('derivadoscafe');
 Route::get('/cultivacafe',[VentasController::class, 'cultivacafe'])->name('cultivacafe');
 Route::get('/herramientas',[VentasController::class, 'herramientas'])->name('herramientas');
+
+Route::post('/producto', [ProductoController::class, 'store'])->name('producto');
