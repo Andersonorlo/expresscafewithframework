@@ -23,8 +23,10 @@ Route::post('/login', [AuthController::class, 'iniciarSesion'])->name('login.env
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
 
-Route::get('/logout', function(){
+Route::post('/logout', function(){
     Auth::logout();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
     return redirect()->route('login.form')->with('success', 'Sesion cerrada');
 })->name('logout');
 
