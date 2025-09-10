@@ -9,7 +9,7 @@ use App\Models\Producto;
 class ProductoController extends Controller
 {
     //aqui hay una validacion de datos 
-    public function create(Request $request){
+    public function store(Request $request){
 
     $request->validate([
         'nombre' => 'required|string|max:100',
@@ -38,5 +38,11 @@ class ProductoController extends Controller
 
     return redirect()->back()->with('success', 'Producto guardado correctamente');
 
+    }
+
+    public function create() {
+    $categorias = \App\Models\Categoria::all();
+    $unidades = \App\Models\Unidad::all();
+    return view('productos.formulario-productos', compact('categorias', 'unidades'));
     }
 }

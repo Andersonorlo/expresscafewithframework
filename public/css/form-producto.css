@@ -1,61 +1,160 @@
-.form-container {
-    max-width: 600px;
-    margin: 40px auto;
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.header {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #402910;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
+.header .titulo1 {
+    font-size: 25px;
+    color: gold;
+    background-color: #402910;
+}
+
+.header .subtitulo1{
+    color: #ffffff;
+    background-color: #402910;
+}
+
+.header form{
+    background-color: #402910;
+    display: flex;
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+}
+
+.header input[type="search"] {
+    padding: 11px;
+    outline: none;
+    width: 50%;
+    background-color: white;
+    border: none;
+}
+
+.header .B1 {
+    background-color: white;
+    color: #49271B;
+    padding: 11px 20PX;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.header .B2 {
+    background-color: white;
+    color: #49271B;
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor principal */
+.main-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 1px;
+    background-color: #d7ccc8;
+    min-height: 85vh;
+}
+
+/* Contenedor del formulario */
+.form-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 16px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Título */
 .form-title {
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 32px;
+    font-weight: 700;
+    color: #4B2E2E;
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+}
+.form-inner {
+    width: 100%;
+    margin-left: 200px;
+    margin-right: 200px;
+    align-items: center;
+    background: none;
+}
+/* Grupo de campos */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+/* Etiquetas */
+.form-group label {
+    font-size: 17px;
+    margin: 5px;
+    font-weight: 600;
     color: #333;
 }
 
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    font-weight: 500;
-    margin-bottom: 8px;
-    color: #555;
-}
-
+/* Campos */
 .form-group input,
 .form-group textarea,
 .form-group select {
-    width: 100%;
-    padding: 10px 12px;
+    width: 70%;
+    padding: 5px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    border-radius: 5px;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
+    background-color: #f9f9f9;
 }
+/* para eliminar flechas del input typt number */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
 
+/* Enfoque */
 .form-group input:focus,
 .form-group textarea:focus,
 .form-group select:focus {
-    border-color: #3182ce;
+    border-color: #8B5E3C;
+    box-shadow: 0 0 0 4px rgba(139, 94, 60, 0.2);
     outline: none;
 }
 
+/* Botón */
 .form-group button {
     width: 100%;
-    background-color: #3182ce;
+    padding: 24px;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: #8B5E3C;
     color: white;
-    padding: 12px;
-    font-size: 16px;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
+/* Hover del botón */
 .form-group button:hover {
-    background-color: #2563eb;
+    background-color: #A66F4B;
 }
+

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,14 +19,14 @@
             <h4 class="subtitulo1">Cafe Colombiano</h4>
         </section>
 
-        <form>
+        <form action="{{ route('productos.store') }}" method="POST" enctype="multipart/form-data">
             <input type="search" placeholder="Buscar producto">
             <button class="B1" type="submit">Buscar</button>
         </form>
 
         @auth
             <div class="user-menu-container">
-                <button onclick="toggleDropdown()" class="B2">
+                <button id="userButton" class="user-button">
                     {{ Auth::user()->nombre }}
                     <svg class="user-menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:16px; height:16px;">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -108,6 +109,7 @@
 </section>
 
 <footer>Anderson Dev 2025</footer>
-<script src="{{ asset('js/dashboard.js') }}"></script>
+
 </body>
+<script src="{{ asset('js/dashboard.js') }}"></script>
 </html>

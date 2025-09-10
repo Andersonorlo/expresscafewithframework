@@ -9,6 +9,9 @@ class Unidad extends Model
 {
     use HasFactory;
 
+    protected $table = 'unidades';
+    protected $fillable = ['nombre'];
+    
     public function productos(){
         return $this->hasMany(Producto::class);
     }

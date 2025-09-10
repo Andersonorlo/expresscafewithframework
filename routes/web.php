@@ -36,3 +36,8 @@ Route::get('/cultivacafe',[VentasController::class, 'cultivacafe'])->name('culti
 Route::get('/herramientas',[VentasController::class, 'herramientas'])->name('herramientas');
 
 Route::post('/producto', [ProductoController::class, 'create'])->name('productos.create');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/vender', [ProductoController::class, 'create'])->name('productos.create');
+    Route::post('/vender', [ProductoController::class, 'store'])->name('productos.store');
+});
