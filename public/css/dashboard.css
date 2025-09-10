@@ -204,3 +204,17 @@ footer {
     text-align: center;
     background-color: white;
 }
+.user-dropdown.hidden { 
+    display: none; 
+}
+
+.user-dropdown-item {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: #333;
+}
+
+.user-dropdown-item:hover {
+    background-color: #f0f0f0;
+}

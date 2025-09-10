@@ -7,3 +7,4 @@ document.querySelectorAll('.caja').forEach(card => {
         card.style.transform = "scale(1)";
     });
 })
+

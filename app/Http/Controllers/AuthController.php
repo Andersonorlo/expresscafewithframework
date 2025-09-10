@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Usuario;
 
 class AuthController extends Controller
@@ -54,7 +55,7 @@ class AuthController extends Controller
         $usuario = Usuario::where('correo', $request->correo)->first();
 
         if($usuario && Hash::check($request->contraseña, $usuario->contraseña)){
-            session(['usuario_id' => $usuario->id]);
+            Auth::login($usuario);;
             return redirect()->route('dashboard')->with('success', 'Bienvenido, '. $usuario->nombre);
         }
 
@@ -63,11 +64,13 @@ class AuthController extends Controller
     }
 
     public function mostrarDashboard(){
-        if(!session()->has('usuario_id')){
-            return redirect()->route('login.form')->withErrors(['access' => 'Debes inciar sesión']);
-        }
-        $usuario = Usuario::find(session('usuario_id'));
-        return view('dashboard', compact('usuario'));
+        $usuario = Auth::user();
+        return view('dashboard',compact('usuario'));
+    }
+
+    public function cerrarSesion(){
+        Auth::logout();
+        return redirect()->route('login.form')->with('success', 'Sesion cerrada');
     }
 }
 

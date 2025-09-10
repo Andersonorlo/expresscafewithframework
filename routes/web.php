@@ -1,13 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\VentasController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\DashboardController;
 
 
 Route::get('/', function(){
-    if (session()->has('usuario_id')) {
+    if (Auth::check()) {
         return redirect()->route('dashboard');
     }
     return view('index');
@@ -19,11 +21,11 @@ Route::post('/registro', [AuthController::class, 'registrarUsuario'])->name('reg
 Route::get('/login', [AuthController::class, 'mostrarFormularioLogin'])->name('login.form');
 Route::post('/login', [AuthController::class, 'iniciarSesion'])->name('login.enviar');
 
-Route::get('/dashboard', [AuthController::class, 'mostrarDashboard'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
 
 Route::get('/logout', function(){
-    session()->forget('usuario_id');
-    return redirect()->route('login.form');
+    Auth::logout();
+    return redirect()->route('login.form')->with('success', 'Sesion cerrada');
 })->name('logout');
 
 Route::get('/compracafe',[VentasController::class, 'compracafe'])->name('compracafe');
