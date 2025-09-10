@@ -1,3 +1,4 @@
+<!-- este lo utiliza las categorias del menu -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
