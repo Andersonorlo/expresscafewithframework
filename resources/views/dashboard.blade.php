@@ -76,7 +76,7 @@
 <section class="productosBackground">
     <h1 class="titulocompra">COMPRA CAFE</h1>
     <section class="productos">
-        <!-- Aquí puedes reemplazar con @foreach($productosCafe as $producto) si lo deseas -->
+        
         <article class="caja"><img src="{{ asset('img/logo3.png') }}" alt="imgproducto1"><h1>Producto1</h1><p>Precio</p><button>Comprar</button></article>
         <article class="caja"><img src="{{ asset('img/logo3.png') }}" alt="imgproducto1"><h1>Producto2</h1><p>Precio</p><button>Comprar</button></article>
         <article class="caja"><img src="{{ asset('img/logo3.png') }}" alt="imgproducto1"><h1>Producto3</h1><p>Precio</p><button>Comprar</button></article>

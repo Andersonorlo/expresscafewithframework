@@ -9,7 +9,7 @@ use App\Models\Producto;
 class ProductoController extends Controller
 {
     //aqui hay una validacion de datos 
-    public function store(Request $request){
+    public function create(Request $request){
 
     $request->validate([
         'nombre' => 'required|string|max:100',

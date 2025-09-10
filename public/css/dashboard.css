@@ -6,12 +6,17 @@
 }
 /* encabezado de la pagina*/
 .headerbackground{
-    background-color: #402910;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #402910;
+    padding: 0 15px;
+    
 }
 .header {
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
     background-color: #402910;
     padding: 15px;
     display: flex;
@@ -57,9 +62,11 @@ input{
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
-    display: inline-block;
+    display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    cursor: pointer;
 }
 /* menu o cinta de desplazamiento */
 .menuBackground{
@@ -203,6 +210,18 @@ footer {
     padding: 0;
     text-align: center;
     background-color: white;
+}
+.user-dropdown {
+    position: absolute;
+    top: 100%; 
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: none; 
+}
+.user-menu-container {
+    position: relative; 
 }
 .user-dropdown.hidden { 
     display: none; 

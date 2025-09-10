@@ -33,4 +33,4 @@ Route::get('/derivadoscafe',[VentasController::class, 'derivadoscafe'])->name('d
 Route::get('/cultivacafe',[VentasController::class, 'cultivacafe'])->name('cultivacafe');
 Route::get('/herramientas',[VentasController::class, 'herramientas'])->name('herramientas');
 
-Route::post('/producto', [ProductoController::class, 'store'])->name('producto');
+Route::post('/producto', [ProductoController::class, 'create'])->name('productos.create');
