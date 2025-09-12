@@ -60,69 +60,7 @@ input{
     justify-content: center;
     align-items: center;
 }
-.user-button {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
-    background-color: #f5f5f5;
-    color: #49271B;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-.user-menu-container {
-    position: relative;
-}
-.user-dropdown {
-    position: absolute;
-    top: 100%;
-    left: -40%;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    padding: 10px;
-    z-index: 1000;
-    min-width: 180px;
-}
-.user-dropdown-item {
-    display: block;
-    padding: 8px 12px;
-    color: #49271B;
-    text-decoration: none;
-    font-weight: 500;
-}
 
-.user-dropdown-item:hover {
-    background-color: #f0e6dd;
-}
-
-.user-button:hover {
-    background-color: #e0d6cf;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-.hidden {
-    display: none;
-}
-/* .header form{
-    background-color: #402910;
-    display: flex;
-    flex: 2;
-    justify-content: center;
-    align-items: center;
-}
-
-.header input[type="search"] {
-    padding: 11px;
-    outline: none;
-    width: 50%;
-    background-color: white;
-    border: none;
-}
-    */
 .menuBackground{
     background-color: #654321;
     width: 100%;

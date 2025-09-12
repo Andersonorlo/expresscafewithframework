@@ -10,4 +10,5 @@
         @endforeach
     </div>
 </section>
+<footer>Anderson Dev 2025</footer>
 @endsection
