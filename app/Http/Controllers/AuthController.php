@@ -9,11 +9,13 @@ use App\Models\Usuario;
 
 class AuthController extends Controller
 {
-    public function mostrarFormularioRegistro(){
+    public function mostrarFormularioRegistro()
+    {
         return view('registro');
     }
 
-    public function registrarUsuario(Request $request){
+    public function registrarUsuario(Request $request)
+    {
         $request->validate([
             'nombre' => 'required|string|max:255',
             'apellido' => 'required|string|max:255',
@@ -38,39 +40,41 @@ class AuthController extends Controller
             'contraseña' => bcrypt($request->contraseña), //bcryp para encriptar la contraseña
         ]);
 
-        return redirect()->route('registro.form')->with('success','Usuarios registrado');
+        return redirect()->route('registro.form')->with('success', 'Usuarios registrado');
     }
 
-    public function mostrarFormularioLogin(){
+    public function mostrarFormularioLogin()
+    {
         return view(('login'));
     }
 
-    public function iniciarSesion (Request $request){
+    public function iniciarSesion(Request $request)
+    {
 
         $request->validate([
-           'correo' => 'required|email' ,
-           'contraseña' => 'required|string',
+            'correo' => 'required|email',
+            'contraseña' => 'required|string',
         ]);
 
         $usuario = Usuario::where('correo', $request->correo)->first();
 
-        if($usuario && Hash::check($request->contraseña, $usuario->contraseña)){
+        if ($usuario && Hash::check($request->contraseña, $usuario->contraseña)) {
             Auth::login($usuario);;
-            return redirect()->route('dashboard')->with('success', 'Bienvenido, '. $usuario->nombre);
+            return redirect()->route('usuario')->with('success', 'Bienvenido, ' . $usuario->nombre);
         }
 
         return back()->withErrors(['correo' => 'Credenciales incorrectas']);
-
     }
 
-    public function mostrarDashboard(){
+    public function mostrarusuario()
+    {
         $usuario = Auth::user();
-        return view('dashboard',compact('usuario'));
+        return view('usuario', compact('usuario'));
     }
 
-    public function cerrarSesion(){
+    public function cerrarSesion()
+    {
         Auth::logout();
         return redirect()->route('login.form')->with('success', 'Sesion cerrada');
     }
 }
-
