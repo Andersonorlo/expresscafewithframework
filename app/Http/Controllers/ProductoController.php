@@ -41,8 +41,23 @@ class ProductoController extends Controller
     }
 
     public function create() {
-    $categorias = \App\Models\Categoria::all();
-    $unidades = \App\Models\Unidad::all();
-    return view('productos.formulario-productos', compact('categorias', 'unidades'));
+        
+        $categorias = \App\Models\Categoria::all();
+        $unidades = \App\Models\Unidad::all();
+
+        return view('productos.formulario-productos', compact('categorias', 'unidades'));
+    }
+
+    public function sugerencia(){
+
+        $productosPorCategoria = [
+            'compraCafe' => Producto::where('categoria_id', 1)->take(4)->get(),
+            'derivadosCafe' => Producto::where('categoria_id', 2)->take(4)->get(),
+            'cultivaCafe' => Producto::where('categoria_id', 3)->take(4)->get(),
+            'herramientas' => Producto::where('categoria_id', 4)->take(4)->get(),
+        ];
+
+        return view('index', compact(('productosPorCategoria')));
+
     }
 }

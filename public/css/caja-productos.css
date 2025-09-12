@@ -1,0 +1,67 @@
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+h2{
+    text-align: center;
+    font-size: 40px;
+    padding: 0;
+    color: #D3D3D3;
+}
+.caja {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.caja img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-width: 250px;
+}
+
+.caja h3 {
+    font-size: 1.1rem;
+    margin: 0.8rem;
+    color: #333;
+}
+
+.caja p {
+    margin: 0 0.8rem 0.8rem;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.caja strong {
+    color: #2c7a2c;
+}
+
+.caja button {
+    margin: auto 0 1rem;
+    align-self: center;
+    background: #2c7a2a;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.caja button:hover {
+    background: #256b25;
+}
+.grid-categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
+}

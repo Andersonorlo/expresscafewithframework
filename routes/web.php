@@ -3,17 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\InicioController;
 use App\Http\Controllers\VentasController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\DashboardController;
 
 
-Route::get('/', function(){
-    if (Auth::check()) {
-        return redirect()->route('dashboard');
-    }
-    return view('index');
-})->name('inicio');
+Route::get('/', [InicioController::class, 'index'])->name('inicio');
 
 Route::get('/registro', [AuthController::class, 'mostrarFormularioRegistro'])->name('registro.form');
 Route::post('/registro', [AuthController::class, 'registrarUsuario'])->name('registro.enviar');

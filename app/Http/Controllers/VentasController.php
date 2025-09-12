@@ -18,9 +18,9 @@ class VentasController extends Controller
         return view('derivadoscafe', compact('productos'));
     }
 
-    public function cultivocafe(){
+    public function cultivacafe(){
         $productos = Producto::where('categoria_id', 3)->get();
-        return view('cultivocafe', compact('productos'));
+        return view('cultivacafe', compact('productos'));
     }
 
     public function herramientas(){

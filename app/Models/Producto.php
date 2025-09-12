@@ -14,13 +14,13 @@ class Producto extends Model
     ];
 
     public function categoria(){
-        return $this->beLongsTo(Categoria::class);
+        return $this->belongsTo(Categoria::class);
     }
     public function unidad (){
-        return $this->beLongsTo(Unidad::class);
+        return $this->belongsTo(Unidad::class);
     }
 
     public function usuario(){
-        return $this->beLongsTo(Usuario::class, 'user_id');
+        return $this->belongsTo(Usuario::class, 'user_id');
     }
 }
