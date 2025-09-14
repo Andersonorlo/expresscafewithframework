@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use App\Models\Producto;
-use Illuminate\Http\Request;
 
-class InicioController extends Controller
+class IndexController extends Controller
 {
     public function index()
     {

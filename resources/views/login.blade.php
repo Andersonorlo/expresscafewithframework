@@ -11,26 +11,18 @@
 
     <img src="{{ asset('img/logo3.png') }}" class="logo">
 
-    <form method="POST" action="{{ route('login.enviar') }}">
-        @csrf <!-- Protección contra CSRF -->
+    <form id="loginForm">
 
         <h1>Iniciar Sesión</h1>
 
-        <input class="casillas" type="email" name="correo" placeholder="Correo electrónico" value="{{ old('correo') }}" required>
-        @error('correo')
-        <small style="color:red;">{{ $message }}</small>
-        @enderror
+        <input class="casillas" type="email" id="email" placeholder="Correo electrónico" required>
+        <span id="errorEmail" style="display:none; color:red;"></span>
 
-        <input class="casillas" type="password" name="contraseña" placeholder="Contraseña" required>
-        @error('password')
-        <small style="color:red;">{{ $message }}</small>
-        @enderror
+
+        <input class="casillas" type="password" id="password" placeholder="Contraseña" required>
+        <span id="errorPassword" style="display:none; color:red;"></span>
 
         <button class="casillas" type="submit">Ingresar</button>
-
-        @if ($errors->has('correo'))
-        <div style="color:red;">{{ $errors->first('correo') }}</div>
-        @endif
 
         <section class="btn-inicio">
             <p>¿No tienes cuenta?</p>
@@ -38,6 +30,7 @@
         </section>
         <a href="{{ route('inicio') }}" class="principal">Volver</a>
     </form>
+    <script src="{{ asset('js/login.js')}}"></script>
 </body>
 
 </html>

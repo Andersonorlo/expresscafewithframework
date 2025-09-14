@@ -15,7 +15,7 @@
     <section class="categoria">
         <h2>Compra Café</h2>
         <div class="grid-categorias">
-            @foreach($productosPorCategoria['compraCafe'] as $producto)
+            @foreach($productosPorCategoria['compracafe'] as $producto)
             @include('layouts.partials.caja-productos', ['producto' => $producto])
             @endforeach
         </div>
@@ -23,7 +23,7 @@
     <section class="categoria">
         <h2>Derivados del Café</h2>
         <div class="grid-categorias">
-            @foreach($productosPorCategoria['derivadosCafe'] as $producto)
+            @foreach($productosPorCategoria['derivadoscafe'] as $producto)
             @include('layouts.partials.caja-productos', ['producto' => $producto])
             @endforeach
         </div>
@@ -31,7 +31,7 @@
     <section class="categoria">
         <h2>Cultiva Café</h2>
         <div class="grid-categorias">
-            @foreach($productosPorCategoria['cultivaCafe'] as $producto)
+            @foreach($productosPorCategoria['cultivacafe'] as $producto)
             @include('layouts.partials.caja-productos', ['producto' => $producto])
             @endforeach
         </div>
@@ -47,4 +47,5 @@
 </section>
 
 <footer>Anderson Dev 2025</footer>
+<script src="{{ asset('js/index.js') }}"></script>
 @endsection
