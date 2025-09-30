@@ -5,7 +5,7 @@ namespace Tests\Browser;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-
+//php artisan dusk --filter=LoginTest
 
 class LoginTest extends DuskTestCase
 {

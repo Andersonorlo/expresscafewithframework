@@ -14,34 +14,26 @@
 <section class="productos">
     <section class="categoria">
         <h2>Compra Café</h2>
-        <div class="grid-categorias">
-            @foreach($productosPorCategoria['compracafe'] as $producto)
-            @include('layouts.partials.caja-productos', ['producto' => $producto])
-            @endforeach
+        <div id="compracafe" class="grid-categorias">
+
         </div>
     </section>
     <section class="categoria">
         <h2>Derivados del Café</h2>
-        <div class="grid-categorias">
-            @foreach($productosPorCategoria['derivadoscafe'] as $producto)
-            @include('layouts.partials.caja-productos', ['producto' => $producto])
-            @endforeach
+        <div id="derivadoscafe" class="grid-categorias">
+
         </div>
     </section>
     <section class="categoria">
         <h2>Cultiva Café</h2>
-        <div class="grid-categorias">
-            @foreach($productosPorCategoria['cultivacafe'] as $producto)
-            @include('layouts.partials.caja-productos', ['producto' => $producto])
-            @endforeach
+        <div id="cultivacafe" class="grid-categorias">
+
         </div>
     </section>
     <section class="categoria">
         <h2>Herramientas</h2>
-        <div class="grid-categorias">
-            @foreach($productosPorCategoria['herramientas'] as $producto)
-            @include('layouts.partials.caja-productos', ['producto' => $producto])
-            @endforeach
+        <div id="herramientas" class="grid-categorias">
+
         </div>
     </section>
 </section>

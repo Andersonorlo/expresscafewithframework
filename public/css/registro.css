@@ -1,81 +1,94 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 body {
-    width: 100vw;
-    height: 100vh;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #402910;
-
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #402910;
+  padding: 20px;
 }
+
 .form-container {
-    width: 100%;
-    max-width: 600px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-}
-.logo{
-    width: 120px;
-    height: auto;
-    margin-bottom: 20px;
-    display: block;
+  width: 100%;
+  max-width: 600px; /* límite en pantallas grandes */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.logo {
+  width: 40%;          /* relativo al ancho */
+  max-width: 180px;    /* no crece más de 180px */
+  height: auto;
+  margin-bottom: 20px;
+  display: block;
+}
 
 form {
-    width: 100%;
-    background-color: #654321;
-    border-radius: 20px;
-    padding: 20px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 100%;
+  background-color: #654321;
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .casillas {
-    border: 1px solid #ccc;
-    width: 80%;
-    padding: 10px;
-    margin: 10px;
+  border: 1px solid #ccc;
+  width: 100%;         /* ocupa todo el ancho del form */
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 5px;
 }
-/* para eliminar flechas del input typt number */
+
+/* eliminar flechas en inputs numéricos */
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-    }
- /* input[type=number] { -moz-appearance:textfield; } */
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .boton {
-    border: none;
-    background-color: #C0A090;
-    border-radius: 20px;
-    width: 250px;
-    padding: 10px;
-    margin: 10px;
-    color: black;
+  border: none;
+  background-color: #C0A090;
+  border-radius: 20px;
+  width: 100%;         /* ocupa todo el ancho */
+  padding: 12px;
+  margin: 15px 0;
+  color: black;
+  font-weight: 500;
+  cursor: pointer;
 }
+
 section {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
 }
+
 p {
-    margin: 5px;
+  margin: 0;
 }
+
 .inicio {
-    margin: 5px;
-    color: gold;
-    text-decoration: none;
+  color: gold;
+  text-decoration: none;
 }
-.principal{
-    text-align: center;
-    text-decoration: none;
-    color: red;
+
+.principal {
+  text-align: center;
+  text-decoration: none;
+  color: red;
+  margin-top: 10px;
 }

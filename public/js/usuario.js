@@ -1,6 +1,14 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    let usuario = JSON.parse(localStorage.getItem("usuario"));
     const token = localStorage.getItem("token");
+    const path = window.location.pathname;
+
+    // 🔒 Proteger rutas privadas
+    if ((path === "/usuario" || path === "/vender") && !token) {
+        window.location.href = "/login";
+        return;
+    }
+
+    let usuario = JSON.parse(localStorage.getItem("usuario"));
     const userMenu = document.getElementById("userMenu");
     const guestMenu = document.getElementById("guestMenu");
     const nombreUsuario = document.getElementById("nombreUsuario");
@@ -8,7 +16,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const button = document.querySelector(".user-button");
     const dropdown = document.getElementById("userDropdown");
 
-    // Si no hay usuario en localStorage pero sí hay token, lo pedimos a la API
+    // 👤 Si no hay usuario en localStorage pero sí hay token, lo pedimos a la API
     if (!usuario && token) {
         try {
             const res = await fetch("/api/perfil", {
@@ -17,18 +25,27 @@ document.addEventListener("DOMContentLoaded", async () => {
             if (res.ok) {
                 usuario = await res.json();
                 localStorage.setItem("usuario", JSON.stringify(usuario));
+            } else {
+                localStorage.removeItem("token");
+                localStorage.removeItem("usuario");
+                window.location.href = "/login";
+                return;
             }
         } catch (err) {
             console.error("Error cargando usuario:", err);
+            window.location.href = "/login";
+            return;
         }
     }
 
+    // 🎯 Mostrar menú de usuario si está logueado
     if (usuario) {
-        nombreUsuario.textContent = usuario.nombre;
-        userMenu.style.display = "block";
-        guestMenu.style.display = "none";
+        if (nombreUsuario) nombreUsuario.textContent = usuario.nombre;
+        if (userMenu) userMenu.style.display = "block";
+        if (guestMenu) guestMenu.style.display = "none";
     }
 
+    // ⬇️ Dropdown toggle
     if (button && dropdown) {
         button.addEventListener("click", (e) => {
             e.stopPropagation();
@@ -42,6 +59,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
+    // 🚪 Logout
     if (logoutBtn) {
         logoutBtn.addEventListener("click", (e) => {
             e.preventDefault();
@@ -59,12 +77,3 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 });
-
-// evitar que entre alguien sin token
-
-/* document.addEventListener("DOMContentLoaded", () => {
-    const token = localStorage.getItem("token");
-    if (!token) {
-        window.location.href = "/login";
-    }
-}); */
