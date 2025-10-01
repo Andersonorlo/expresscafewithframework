@@ -5,6 +5,12 @@
 *.html diff=html
 *.md diff=markdown
 *.php diff=php
+*.php text eol=lf
+*.js text eol=lf
+*.blade.php text eol=lf
+*.sh text eol=lf
+*.log text eol=crlf
+
 
 /.github export-ignore
 CHANGELOG.md export-ignore
